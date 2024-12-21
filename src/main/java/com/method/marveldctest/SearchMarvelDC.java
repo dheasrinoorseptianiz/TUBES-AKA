@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class SearchMarvelDC {
     // Metode pencarian iteratif
-    public static ArrayList searchByGenreIterative(ArrayList films, String genre) {
-        ArrayList result = new ArrayList();
+    public static ArrayList<DataMarvelDC> searchByGenreIterative(ArrayList<DataMarvelDC> films, String genre) {
+        ArrayList<DataMarvelDC> result = new ArrayList<>();
         for (int i = 0; i < films.size(); i++) {
-            DataMarvelDC film = (DataMarvelDC) films.get(i);
-            if (film.getGenre().toLowerCase().contains(genre)) {
+            DataMarvelDC film = films.get(i);
+            if (film.getGenre().toLowerCase().equals(genre)) {
                 result.add(film);
             }
         }
@@ -16,11 +16,11 @@ public class SearchMarvelDC {
     }
 
     // Metode pencarian rekursif
-    public static ArrayList searchByGenreRecursive(ArrayList films, String genre, int index, ArrayList result) {
+    public static ArrayList<DataMarvelDC> searchByGenreRecursive(ArrayList<DataMarvelDC> films, String genre, int index, ArrayList result) {
         if (index >= films.size()) {
             return result;
         }
-
+  
         DataMarvelDC film = (DataMarvelDC) films.get(index);
         if (film.getGenre().toLowerCase().contains(genre)) {
             result.add(film);
