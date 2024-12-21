@@ -4,21 +4,14 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class UIMarvelDC extends JFrame {
     private JTextField txtGenre;
-    private JButton btnSearch;
-    private JTable table;
+    private JLabel lblExecutionTime;
     private DefaultTableModel tableModel;
-    private ArrayList<DataMarvelDC> films; // Daftar film yang akan dicari
+    private JTable table;
 
     public UIMarvelDC() {
-        // Menginisialisasi daftar film dengan mengambil data dari DataMarvelDC
-        films = DataMarvelDC.getFilms();
-
         // Menyiapkan frame dan layout
         setTitle("Sistem Pencarian Film Berdasarkan Genre");
         setLayout(new BorderLayout());
@@ -27,30 +20,31 @@ public class UIMarvelDC extends JFrame {
 
         // Panel untuk input dengan padding dan warna
         JPanel panelInput = new JPanel();
-        panelInput.setLayout(new GridLayout(2, 2, 10, 10)); // Tambahkan jarak antar komponen
-        panelInput.setBorder(new EmptyBorder(15, 15, 15, 15)); // Padding di sekitar panel
+        panelInput.setLayout(new GridLayout(3, 2, 20, 20)); // Tambahkan jarak antar komponen
         panelInput.setBackground(new Color(230, 240, 250)); // Warna latar belakang panel
+        panelInput.setBorder(new EmptyBorder(20, 20, 20, 20)); // Menambahkan margin di sekeliling panel
 
         // Menambahkan input form
         JLabel lblGenre = new JLabel("Genre:");
-        lblGenre.setFont(new Font("Arial", Font.BOLD, 14));
         panelInput.add(lblGenre);
 
         txtGenre = new JTextField();
         panelInput.add(txtGenre);
 
-        // Tombol pencarian
-        btnSearch = new JButton("Cari");
-        btnSearch.setFont(new Font("Arial", Font.BOLD, 14));
-        btnSearch.setBackground(new Color(100, 150, 250)); // Warna latar belakang tombol
-        btnSearch.setForeground(Color.WHITE); // Warna teks tombol
+        // Tombol pencarian iteratif
+        JButton btnIterative = new JButton("Iteratif");
         panelInput.add(new JLabel());  // Placeholder untuk grid
-        panelInput.add(btnSearch);
+        panelInput.add(btnIterative);
+
+        // Tombol pencarian rekursif
+        JButton btnRecursive = new JButton("Rekursif");
+        panelInput.add(new JLabel());  // Placeholder untuk grid
+        panelInput.add(btnRecursive);
 
         // Menambahkan panel input ke frame
         add(panelInput, BorderLayout.NORTH);
 
-        // Menyiapkan tabel untuk hasil pencarian dengan warna dan font
+        // Menyiapkan tabel untuk hasil pencarian
         tableModel = new DefaultTableModel();
         tableModel.addColumn("Judul");
         tableModel.addColumn("Genre");
@@ -59,36 +53,23 @@ public class UIMarvelDC extends JFrame {
         tableModel.addColumn("Rating");
 
         table = new JTable(tableModel);
-        table.setRowHeight(25); // Tinggi baris
-        table.setFont(new Font("Arial", Font.PLAIN, 12)); // Font tabel
-        table.setBackground(Color.WHITE); // Warna latar belakang tabel
-        table.setForeground(Color.BLACK); // Warna teks tabel
-
         JScrollPane scrollPane = new JScrollPane(table);
         add(scrollPane, BorderLayout.CENTER);
 
-        // Menambahkan action listener pada tombol search
-        btnSearch.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                searchFilm();  // Memanggil fungsi searchFilm saat tombol diclick
-            }
+        // Label untuk menampilkan waktu eksekusi
+        lblExecutionTime = new JLabel("Waktu Eksekusi: ");
+        add(lblExecutionTime, BorderLayout.SOUTH);
+
+        // Tombol untuk pencarian iteratif
+        btnIterative.addActionListener(e -> {
+            String genre = txtGenre.getText().toLowerCase();
+            MarvelDCTest.searchFilm(genre, "Iteratif", tableModel, lblExecutionTime);
         });
-    }
 
-    // Fungsi pencarian film berdasarkan genre saja
-    private void searchFilm() {
-        // Mendapatkan data input dari user
-        String genre = txtGenre.getText().toLowerCase();
-
-        // Clear tabel sebelum menambahkan data baru
-        tableModel.setRowCount(0);
-
-        // Menambahkan film yang cocok ke dalam tabel
-        for (DataMarvelDC film : films) {
-            if (!genre.isEmpty() && film.getGenre().toLowerCase().contains(genre)) {
-                tableModel.addRow(film.toObjectArray());
-            }
-        }
+        // Tombol untuk pencarian rekursif
+        btnRecursive.addActionListener(e -> {
+            String genre = txtGenre.getText().toLowerCase();
+            MarvelDCTest.searchFilm(genre, "Rekursif", tableModel, lblExecutionTime);
+        });
     }
 }
