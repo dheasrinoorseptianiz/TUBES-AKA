@@ -16,7 +16,3 @@ public class MarvelDCTest {
         });
     }
 }
-
-//test
-//test
-//test

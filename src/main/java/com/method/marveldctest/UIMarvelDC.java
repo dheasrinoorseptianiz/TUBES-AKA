@@ -16,23 +16,8 @@ public class UIMarvelDC extends JFrame {
     private ArrayList<DataMarvelDC> films; // Daftar film yang akan dicari
 
     public UIMarvelDC() {
-        // Menginisialisasi daftar film
-        films = new ArrayList<>();
-        films.add(new DataMarvelDC("Iron Man", "Action", "126", "2008", "7.9"));
-        films.add(new DataMarvelDC("The Batman", "Action", "175", "2022", "7.8"));
-        films.add(new DataMarvelDC("Deadpool and Wolverine", "Comedy", "127", "2024", "7.9"));
-        films.add(new DataMarvelDC("Spiderman: No Way Home", "Action", "148", "2021", "8.3"));
-        films.add(new DataMarvelDC("Spiderman: Far From Home", "Action", "129", "2019", "7.5"));
-        films.add(new DataMarvelDC("Venom", "Action", "112", "2018", "6.7"));
-        films.add(new DataMarvelDC("Venom: Let There Be Carnage", "Action", "97", "2021", "6.3"));
-        films.add(new DataMarvelDC("Batman v Superman: Dawn of Justice", "Action", "151", "2016", "6.5"));
-        films.add(new DataMarvelDC("Wonder Woman", "Action", "141", "2017", "7.4"));
-        films.add(new DataMarvelDC("Aquaman", "Action", "143", "2018", "6.9"));
-        films.add(new DataMarvelDC("Guardians of the Galaxy", "Action", "121", "2014", "8.0"));
-        films.add(new DataMarvelDC("Guardians of the Galaxy Vol.2", "Action", "136", "2017", "7.6"));
-        films.add(new DataMarvelDC("Black Panther", "Action", "134", "2018", "7.3"));
-        films.add(new DataMarvelDC("The Flash", "Action", "144", "2023", "6.5"));
-        films.add(new DataMarvelDC("Doctor Strange", "Action", "115", "2016", "7.5"));
+        // Menginisialisasi daftar film dengan mengambil data dari DataMarvelDC
+        films = DataMarvelDC.getFilms();
 
         // Menyiapkan frame dan layout
         setTitle("Sistem Pencarian Film Berdasarkan Genre");
