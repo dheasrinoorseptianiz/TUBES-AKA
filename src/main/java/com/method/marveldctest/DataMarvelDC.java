@@ -78,6 +78,16 @@ public class DataMarvelDC {
         films.add(new DataMarvelDC("Black Panther", "Action", "134", "2018", "7.3"));
         films.add(new DataMarvelDC("The Flash", "Action", "144", "2023", "6.5"));
         films.add(new DataMarvelDC("Doctor Strange", "Action", "115", "2016", "7.5"));
+        films.add(new DataMarvelDC("Thor: Ragnarok", "Action", "130", "2017", "7.9"));
+        films.add(new DataMarvelDC("Thor: Love and Thunder", "Action", "119", "2022", "6.3"));
+        films.add(new DataMarvelDC("Captain America: The Winter Soldier", "Action", "136", "2014", "7.8"));
+        films.add(new DataMarvelDC("Captain America: Civil War", "Action", "147", "2016", "7.8"));
+        films.add(new DataMarvelDC("Suicide Squad", "Action", "123", "2021", "6.0"));
+        films.add(new DataMarvelDC("Shazam!", "Action", "132", "2019", "7.0"));
+        films.add(new DataMarvelDC("Ant Man", "Action", "117", "2015", "7.3"));
+        films.add(new DataMarvelDC("Ant Man and the Wssp", "Action", "118", "2018", "7.0"));
+        films.add(new DataMarvelDC("Black Widow", "Action", "134", "2021", "6.7"));
+        films.add(new DataMarvelDC("The Dark Knight", "Action", "152", "2008", "9.0"));
         return films;
     }
 }
