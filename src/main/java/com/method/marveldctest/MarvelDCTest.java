@@ -7,7 +7,6 @@ import java.util.ArrayList;
 public class MarvelDCTest {
 
     public static void main(String[] args) {
-        // Menjalankan antarmuka pengguna (UI)
         SwingUtilities.invokeLater(() -> {
             UIMarvelDC ui = new UIMarvelDC();
             ui.setVisible(true);
@@ -15,16 +14,13 @@ public class MarvelDCTest {
     }
 
     public static void searchFilm(String genre, String selectedMethod, DefaultTableModel tableModel, JLabel lblExecutionTime) {
-        // Mendapatkan daftar film dari DataMarvelDC
+        // Mendapatkan daftar film
         ArrayList<DataMarvelDC> films = DataMarvelDC.getFilms();
 
-        // Waktu mulai pencarian
+        // Mulai pengukuran waktu
         long startTime = System.nanoTime();
 
-        // Clear tabel sebelum menampilkan hasil baru
-        tableModel.setRowCount(0);
-
-        // Pencarian berdasarkan metode yang dipilih
+        // Pencarian berdasarkan metode
         ArrayList<DataMarvelDC> result;
         if ("Iteratif".equals(selectedMethod)) {
             result = SearchMarvelDC.searchByGenreIterative(films, genre);
@@ -32,14 +28,22 @@ public class MarvelDCTest {
             result = SearchMarvelDC.searchByGenreRecursive(films, genre, 0, new ArrayList<>());
         }
 
-        // Menampilkan hasil pencarian di tabel
+        // Akhiri pengukuran waktu
+        long endTime = System.nanoTime();
+        double duration = (endTime - startTime) / 1_000_000.0; // Konversi ke milidetik
+
+        // Tampilkan hasil di tabel
+        tableModel.setRowCount(0); // Hapus data lama
         for (DataMarvelDC film : result) {
-            tableModel.addRow(film.toObjectArray());  // Pastikan DataMarvelDC memiliki metode toObjectArray()
+            tableModel.addRow(film.toObjectArray());
         }
 
-        // Waktu selesai pencarian
-        long endTime = System.nanoTime();
-        long duration = (endTime - startTime) / 1000000; // dalam milidetik
-        lblExecutionTime.setText("Waktu Eksekusi: " + duration + " ms");
+        // Tampilkan waktu eksekusi
+        lblExecutionTime.setText(String.format("Waktu Eksekusi (%s): %.3f ms", selectedMethod, duration));
+
+        // Jika tidak ada hasil
+        if (result.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Tidak ada film ditemukan dengan genre: " + genre, "Informasi", JOptionPane.INFORMATION_MESSAGE);
+        }
     }
 }

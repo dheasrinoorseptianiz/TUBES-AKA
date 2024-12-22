@@ -16,17 +16,22 @@ public class SearchMarvelDC {
     }
 
     // Metode pencarian rekursif
-    public static ArrayList<DataMarvelDC> searchByGenreRecursive(ArrayList<DataMarvelDC> films, String genre, int index, ArrayList result) {
+    public static ArrayList<DataMarvelDC> searchByGenreRecursive(ArrayList<DataMarvelDC> films, String genre, int index, ArrayList<DataMarvelDC> result) {
+        // Kondisi dasar: jika sudah mencapai akhir list, mengembalikan hasil
         if (index >= films.size()) {
             return result;
         }
-  
-        DataMarvelDC film = (DataMarvelDC) films.get(index);
+
+        // Mendapatkan film pada indeks saat ini
+        DataMarvelDC film = films.get(index);
+
+        // Meriksa apakah genre cocok (case-insensitive)
         if (film.getGenre().toLowerCase().contains(genre)) {
             result.add(film);
         }
-
+        // Memanggil rekursif untuk elemen berikutnya
         return searchByGenreRecursive(films, genre, index + 1, result);
     }
 }
+
 

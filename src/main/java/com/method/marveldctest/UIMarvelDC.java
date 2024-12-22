@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class UIMarvelDC extends JFrame {
     private JTextField txtGenre;
@@ -12,39 +13,38 @@ public class UIMarvelDC extends JFrame {
     private JTable table;
 
     public UIMarvelDC() {
-        // Menyiapkan frame dan layout
+        // Pengaturan frame
         setTitle("Sistem Pencarian Film Berdasarkan Genre");
         setLayout(new BorderLayout());
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Panel untuk input dengan padding dan warna
+        // Panel input
         JPanel panelInput = new JPanel();
-        panelInput.setLayout(new GridLayout(3, 2, 20, 20)); // Tambahkan jarak antar komponen
-        panelInput.setBackground(new Color(230, 240, 250)); // Warna latar belakang panel
-        panelInput.setBorder(new EmptyBorder(20, 20, 20, 20)); // Menambahkan margin di sekeliling panel
+        panelInput.setLayout(new GridLayout(3, 2, 20, 20));
+        panelInput.setBackground(new Color(230, 240, 250));
+        panelInput.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        // Menambahkan input form
+        // Input genre
         JLabel lblGenre = new JLabel("Genre:");
         panelInput.add(lblGenre);
 
         txtGenre = new JTextField();
         panelInput.add(txtGenre);
 
-        // Tombol pencarian iteratif
+        // Tombol Iteratif
         JButton btnIterative = new JButton("Iteratif");
-        panelInput.add(new JLabel());  // Placeholder untuk grid
+        panelInput.add(new JLabel());  // Placeholder
         panelInput.add(btnIterative);
 
-        // Tombol pencarian rekursif
+        // Tombol Rekursif
         JButton btnRecursive = new JButton("Rekursif");
-        panelInput.add(new JLabel());  // Placeholder untuk grid
+        panelInput.add(new JLabel());  // Placeholder
         panelInput.add(btnRecursive);
 
-        // Menambahkan panel input ke frame
         add(panelInput, BorderLayout.NORTH);
 
-        // Menyiapkan tabel untuk hasil pencarian
+        // Tabel hasil
         tableModel = new DefaultTableModel();
         tableModel.addColumn("Judul");
         tableModel.addColumn("Genre");
@@ -53,23 +53,49 @@ public class UIMarvelDC extends JFrame {
         tableModel.addColumn("Rating");
 
         table = new JTable(tableModel);
+        table.setAutoCreateRowSorter(true);
         JScrollPane scrollPane = new JScrollPane(table);
         add(scrollPane, BorderLayout.CENTER);
 
-        // Label untuk menampilkan waktu eksekusi
+        // Label waktu eksekusi
         lblExecutionTime = new JLabel("Waktu Eksekusi: ");
+        lblExecutionTime.setBorder(new EmptyBorder(10, 10, 10, 10));
         add(lblExecutionTime, BorderLayout.SOUTH);
 
-        // Tombol untuk pencarian iteratif
+        // Listener tombol iteratif
         btnIterative.addActionListener(e -> {
-            String genre = txtGenre.getText().toLowerCase();
-            MarvelDCTest.searchFilm(genre, "Iteratif", tableModel, lblExecutionTime);
+            performSearch("Iteratif");
         });
 
-        // Tombol untuk pencarian rekursif
+        // Listener tombol rekursif
         btnRecursive.addActionListener(e -> {
-            String genre = txtGenre.getText().toLowerCase();
-            MarvelDCTest.searchFilm(genre, "Rekursif", tableModel, lblExecutionTime);
+            performSearch("Rekursif");
         });
+
+        // Tampilkan semua data saat aplikasi pertama kali dijalankan
+        displayAllData();
+    }
+
+    // Menampilkan semua data di tabel
+    private void displayAllData() {
+        ArrayList<DataMarvelDC> films = DataMarvelDC.getFilms(); // Ambil semua data film
+        tableModel.setRowCount(0); // Pastikan tabel kosong sebelum menambahkan data
+        for (DataMarvelDC film : films) {
+            tableModel.addRow(film.toObjectArray());
+        }
+        lblExecutionTime.setText("Semua data telah dimuat.");
+    }
+
+    private void performSearch(String method) {
+        String genre = txtGenre.getText().trim().toLowerCase();
+
+        // Validasi input
+        if (genre.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Genre tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Panggil metode pencarian
+        MarvelDCTest.searchFilm(genre, method, tableModel, lblExecutionTime);
     }
 }
