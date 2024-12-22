@@ -14,7 +14,7 @@ public class UIMarvelDC extends JFrame {
 
     public UIMarvelDC() {
         // Pengaturan frame
-        setTitle("Sistem Pencarian Film Berdasarkan Genre");
+        setTitle("Sistem Pencarian Film Marvel VS DC Berdasarkan Genre");
         setLayout(new BorderLayout());
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

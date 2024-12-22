@@ -37,7 +37,6 @@ public class MarvelDCTest {
         for (DataMarvelDC film : result) {
             tableModel.addRow(film.toObjectArray());
         }
-
         // Tampilkan waktu eksekusi
         lblExecutionTime.setText(String.format("Waktu Eksekusi (%s): %.3f ms", selectedMethod, duration));
 
