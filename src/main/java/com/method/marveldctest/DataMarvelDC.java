@@ -21,40 +21,20 @@ public class DataMarvelDC {
         return judul;
     }
 
-    public void setJudul(String judul) {
-        this.judul = judul;
-    }
-
     public String getGenre() {
         return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
     }
 
     public String getDurasi() {
         return durasi;
     }
 
-    public void setDurasi(String durasi) {
-        this.durasi = durasi;
-    }
-
     public String getTahunRilis() {
         return tahunRilis;
     }
 
-    public void setTahunRilis(String tahunRilis) {
-        this.tahunRilis = tahunRilis;
-    }
-
     public String getRating() {
         return rating;
-    }
-
-    public void setRating(String rating) {
-        this.rating = rating;
     }
 
     public Object[] toObjectArray() {
@@ -173,11 +153,9 @@ public class DataMarvelDC {
         films.add(new DataMarvelDC("Men in Black", "Action", "98", "1997", "7.3"));
         films.add(new DataMarvelDC("Men in Black II", "Action", "88", "2002", "6.1"));
         films.add(new DataMarvelDC("Men in Black 3", "Action", "106", "2012", "6.8"));
-        // films.add(new DataMarvelDC("Mystery Man", "Action", "121", "1999", "6.1"));
         films.add(new DataMarvelDC("The Rockerter", "Action", "108", "1991", "6.9"));
         films.add(new DataMarvelDC("The Adventure of Tintin", "Animation", "107", "2011", "7.3"));
         films.add(new DataMarvelDC("Watchmen: Tales of the Black Freighter", "Animation", "86", "2009", "7.4"));
-        // films.add(new DataMarvelDC("The Incredible Hulk", "Action", "112", "2008", "6.7"));
         films.add(new DataMarvelDC("The Incredible Hulk", "Action", "112", "2008", "6.7"));
         films.add(new DataMarvelDC("Deadpool 2", "Action", "119", "2018", "7.7"));
         films.add(new DataMarvelDC("Logan: The Wolverine", "Action", "137", "2017", "8.1"));
@@ -214,6 +192,157 @@ public class DataMarvelDC {
         films.add(new DataMarvelDC("Marvel's What If...?", "TV Series", "30", "2021", "7.7"));
         films.add(new DataMarvelDC("DC's Stargirl", "TV Series", "42", "2020", "7.3"));
         films.add(new DataMarvelDC("Marvel's Agents of S.H.I.E.L.D.", "TV Series", "42", "2013", "7.5"));
+        films.add(new DataMarvelDC("Blue Beetle", "Action", "127", "2023", "6.7"));
+        films.add(new DataMarvelDC("Eternals: Rise of Kronos", "Action", "145", "2025", "8.0"));
+        films.add(new DataMarvelDC("Marvel's Runaways", "TV Series", "45", "2017", "7.1"));
+        films.add(new DataMarvelDC("Marvel's Cloak & Dagger", "TV Series", "42", "2018", "7.0"));
+        films.add(new DataMarvelDC("DC Universe Online: Legends", "Video Game", "120", "2011", "7.5"));
+        films.add(new DataMarvelDC("Injustice", "Animation", "78", "2021", "6.2"));
+        films.add(new DataMarvelDC("Marvel Rising: Secret Warriors", "Animation", "80", "2018", "5.3"));
+        films.add(new DataMarvelDC("Batman: Death in the Family", "Animation", "96", "2020", "6.5"));
+        films.add(new DataMarvelDC("The Batman Adventures", "TV Series", "23", "1992", "8.5"));
+        films.add(new DataMarvelDC("Marvel's Moon Knight", "TV Series", "55", "2022", "7.5"));
+        films.add(new DataMarvelDC("Marvel's Ms. Marvel", "TV Series", "50", "2022", "6.2"));
+        films.add(new DataMarvelDC("Loki", "TV Series", "53", "2021", "8.2"));
+        films.add(new DataMarvelDC("Marvel's She-Hulk: Attorney at Law", "TV Series", "35", "2022", "5.2"));
+        films.add(new DataMarvelDC("Gotham Knights", "TV Series", "42", "2023", "5.0"));
+        films.add(new DataMarvelDC("Black Adam", "Action", "125", "2022", "6.5"));
+        films.add(new DataMarvelDC("Justice Society: World War II", "Animation", "84", "2021", "7.2"));
+        films.add(new DataMarvelDC("Marvel's Helstrom", "TV Series", "50", "2020", "6.7"));
+        films.add(new DataMarvelDC("Green Arrow", "Animation", "30", "2020", "7.0"));
+        films.add(new DataMarvelDC("The Defenders", "TV Series", "50", "2017", "7.5"));
+        films.add(new DataMarvelDC("Marvel's Hit-Monkey", "Animation", "25", "2021", "7.8"));
+        films.add(new DataMarvelDC("Justice League Dark", "Animation", "75", "2017", "7.3"));
+        films.add(new DataMarvelDC("Justice League Dark: Apokolips War", "Animation", "90", "2020", "7.8"));
+        films.add(new DataMarvelDC("Batman: The Doom That Came to Gotham", "Animation", "86", "2023", "6.8"));
+        films.add(new DataMarvelDC("Marvel's Ghost Rider", "TV Series", "60", "2023", "7.4"));
+        films.add(new DataMarvelDC("The Spectacular Spider-Man", "Animation", "22", "2008", "8.3"));
+        films.add(new DataMarvelDC("Justice League Unlimited", "Animation", "30", "2004", "8.7"));
+        films.add(new DataMarvelDC("Batman: The Brave and the Bold", "Animation", "30", "2008", "7.3"));
+        films.add(new DataMarvelDC("Super Friends", "Animation", "23", "1973", "7.0"));
+        films.add(new DataMarvelDC("Marvel's Agent Carter", "TV Series", "42", "2015", "7.9"));
+        films.add(new DataMarvelDC("The Avengers: Earth's Mightiest Heroes", "Animation", "25", "2010", "8.3"));
+        films.add(new DataMarvelDC("Marvel's Future Avengers", "Animation", "22", "2017", "5.6"));
+        films.add(new DataMarvelDC("Marvel's Spider-Man", "Animation", "22", "2017", "6.9"));
+        films.add(new DataMarvelDC("Ultimate Spider-Man", "Animation", "23", "2012", "7.2"));
+        films.add(new DataMarvelDC("Wolverine and the X-Men", "Animation", "22", "2009", "8.0"));
+        films.add(new DataMarvelDC("Iron Man: Armored Adventures", "Animation", "22", "2008", "6.5"));
+        films.add(new DataMarvelDC("Marvel's Hulk and the Agents of S.M.A.S.H.", "Animation", "23", "2013", "6.1"));
+        films.add(new DataMarvelDC("Batman: Beyond the White Knight", "Animation", "84", "2023", "7.2"));
+        films.add(new DataMarvelDC("Marvel's Secret Invasion", "TV Series", "50", "2023", "6.8"));
+        films.add(new DataMarvelDC("DC Showcase: Constantine - The House of Mystery", "Animation", "28", "2022", "7.2"));
+        films.add(new DataMarvelDC("Marvel's Spider-Woman", "TV Series", "30", "1979", "6.5"));
+        films.add(new DataMarvelDC("Marvel's Silver Surfer", "TV Series", "22", "1998", "7.0"));
+        films.add(new DataMarvelDC("Fantastic Four: World's Greatest Heroes", "Animation", "22", "2006", "6.9"));
+        films.add(new DataMarvelDC("X-Men Evolution", "Animation", "23", "2000", "7.8"));
+        films.add(new DataMarvelDC("The Incredible Hulk (TV Series)", "TV Series", "48", "1977", "7.0"));
+        films.add(new DataMarvelDC("Marvel's Runaways", "TV Series", "45", "2017", "7.1"));
+        films.add(new DataMarvelDC("Avengers Assemble", "Animation", "22", "2013", "7.0"));
+        films.add(new DataMarvelDC("What If...? Season 2", "TV Series", "30", "2023", "7.4"));
+        films.add(new DataMarvelDC("Spider-Man: Freshman Year", "Animation", "22", "2024", "7.5"));
+        films.add(new DataMarvelDC("Ironheart", "TV Series", "50", "2023", "7.0"));
+        films.add(new DataMarvelDC("Deadpool: Samurai", "Animation", "25", "2025", "8.1"));
+        films.add(new DataMarvelDC("Justice League: Battle for Earth", "Video Game", "90", "2012", "6.5"));
+        films.add(new DataMarvelDC("Spider-Man: New Universe", "Animation", "125", "2024", "8.5"));
+        films.add(new DataMarvelDC("Thor: The Mighty Avenger", "Animation", "94", "2011", "6.5"));
+        films.add(new DataMarvelDC("Lego Marvel Super Heroes", "Animation", "80", "2014", "6.3"));
+        films.add(new DataMarvelDC("DC Super Hero Girls", "Animation", "22", "2019", "6.5"));
+        films.add(new DataMarvelDC("Justice League: Gods and Monsters", "Animation", "76", "2015", "7.0"));
+        films.add(new DataMarvelDC("Spider-Man: Beyond the Spider-Verse", "Animation", "140", "2024", "8.9")); 
+        films.add(new DataMarvelDC("The Authority", "Action", "132", "2026", "TBA")); 
+        films.add(new DataMarvelDC("X-Men: The Animated Series", "Animation", "22", "1992", "8.4"));
+        films.add(new DataMarvelDC("Spider-Man Unlimited", "Animation", "22", "1999", "6.8"));
+        films.add(new DataMarvelDC("Marvel's Battleworld", "Animation", "11", "2020", "7.0"));
+        films.add(new DataMarvelDC("The Punisher: War Zone", "Action", "103", "2008", "5.9"));
+        films.add(new DataMarvelDC("Ghost Rider: Spirit of Vengeance", "Action", "95", "2011", "4.3"));
+        films.add(new DataMarvelDC("Howard the Duck", "Comedy", "110", "1986", "4.7"));
+        films.add(new DataMarvelDC("The Trial of the Incredible Hulk", "TV Movie", "95", "1989", "6.0"));
+        films.add(new DataMarvelDC("Nick Fury: Agent of S.H.I.E.L.D.", "TV Movie", "120", "1998", "3.7"));
+        films.add(new DataMarvelDC("Fantastic Four (1994)", "Animation", "22", "1994", "6.4"));
+        films.add(new DataMarvelDC("Iron Man (1994)", "Animation", "23", "1994", "6.9"));
+        films.add(new DataMarvelDC("Marvel's Avengers: Ultron Revolution", "Animation", "23", "2016", "6.9"));
+        films.add(new DataMarvelDC("Big Hero 6: The Series", "Animation", "22", "2017", "7.3"));
+        films.add(new DataMarvelDC("Wolverine: Weapon X", "Animation", "23", "2011", "7.0"));
+        films.add(new DataMarvelDC("The Phantom Stranger", "Animation", "15", "2020", "6.8"));
+        films.add(new DataMarvelDC("Constantine: City of Demons", "Animation", "90", "2018", "7.6"));
+        films.add(new DataMarvelDC("Batman: Gotham Knight", "Animation", "75", "2008", "6.8"));
+        films.add(new DataMarvelDC("Justice League: Crisis on Two Earths", "Animation", "75", "2010", "7.7"));
+        films.add(new DataMarvelDC("Justice League: Gods and Monsters Chronicles", "Animation", "6", "2015", "8.0"));
+        films.add(new DataMarvelDC("Marvel's Black Widow: Prelude", "Comic Animation", "120", "2021", "7.1"));
+        films.add(new DataMarvelDC("Marvel's Ant-Man Adventures", "Animation", "20", "2021", "6.5"));
+        films.add(new DataMarvelDC("Marvel's Hawkeye", "TV Series", "50", "2021", "7.8"));
+        films.add(new DataMarvelDC("Elektra", "Action", "97", "2005", "4.7"));
+        films.add(new DataMarvelDC("Doctor Strange (1978)", "TV Movie", "93", "1978", "5.2"));
+        films.add(new DataMarvelDC("Marvel Rising: Playing with Fire", "Animation", "44", "2019", "5.3"));
+        films.add(new DataMarvelDC("Legion", "TV Series", "60", "2017", "8.2"));
+        films.add(new DataMarvelDC("Marvel's Runaways Season 2", "TV Series", "45", "2018", "7.2"));
+        films.add(new DataMarvelDC("Spider-Woman: Agent of S.W.O.R.D.", "Animation", "10", "2023", "6.9"));
+        films.add(new DataMarvelDC("Batman: Arkham Asylum", "Video Game", "180", "2009", "9.5"));
+        films.add(new DataMarvelDC("Batman: Arkham City", "Video Game", "240", "2011", "9.5"));
+        films.add(new DataMarvelDC("Marvel's Spider-Man 2 (PS5)", "Video Game", "200", "2023", "9.3"));
+        films.add(new DataMarvelDC("X-Men: The Last Stand (Extended Cut)", "Action", "109", "2006", "6.8"));
+        films.add(new DataMarvelDC("Justice League: Beyond", "Animation", "12", "2022", "6.8"));
+        films.add(new DataMarvelDC("Marvel's Secret Wars", "Animation", "10", "2024", "7.5"));
+        films.add(new DataMarvelDC("Deadpool: Reloaded", "Animation", "45", "2024", "8.0"));
+        films.add(new DataMarvelDC("Wonder Woman 3", "Action", "150", "2024", "TBA"));
+        films.add(new DataMarvelDC("Aquaman and the Lost Kingdom", "Action", "143", "2023", "TBA"));
+        films.add(new DataMarvelDC("Superman: Legacy", "Action", "155", "2025", "TBA"));
+        films.add(new DataMarvelDC("The Batman: Part II", "Action", "150", "2025", "TBA"));
+        films.add(new DataMarvelDC("The Flash: Reverse Flashpoint", "Action", "140", "2025", "TBA"));
+        films.add(new DataMarvelDC("Green Lantern Corps", "Action", "140", "2025", "TBA"));
+        films.add(new DataMarvelDC("Marvel's Armor Wars", "TV Series", "50", "2025", "TBA"));
+        films.add(new DataMarvelDC("Lobo", "Action", "140", "2025", "TBA"));
+        films.add(new DataMarvelDC("The Sandman: Season 2", "TV Series", "60", "2025", "TBA"));
+        films.add(new DataMarvelDC("Justice League Rebirth", "Action", "150", "2026", "TBA"));
+        films.add(new DataMarvelDC("Marvel Zombies", "Animation", "30", "2024", "7.0"));
+        films.add(new DataMarvelDC("X-Men 97", "Animation", "22", "2024", "TBA"));
+        films.add(new DataMarvelDC("Deadpool 3", "Action", "130", "2024", "TBA"));
+        films.add(new DataMarvelDC("Blade: The New Dawn", "Action", "120", "2025", "TBA"));
+        films.add(new DataMarvelDC("Thunderbolts", "Action", "120", "2024", "TBA"));
+        films.add(new DataMarvelDC("Avengers: The Kang Dynasty", "Action", "140", "2026", "TBA"));
+        films.add(new DataMarvelDC("Avengers: Secret Wars", "Action", "150", "2027", "TBA"));
+        films.add(new DataMarvelDC("X-Men: The Gifted", "TV Series", "43", "2017", "7.3"));
+        films.add(new DataMarvelDC("Marvel's Agents of Atlas", "TV Series", "50", "2025", "TBA"));
+        films.add(new DataMarvelDC("Justice League: The Animated Series", "Animation", "24", "2001", "8.7"));
+        films.add(new DataMarvelDC("Marvel's Spider-Verse Chronicles", "Animation", "22", "2025", "TBA"));
+        films.add(new DataMarvelDC("Silver Sable", "Action", "130", "2025", "TBA"));
+        films.add(new DataMarvelDC("The New Warriors", "TV Series", "22", "2024", "TBA"));
+        films.add(new DataMarvelDC("Marvel's Hercules", "Action", "140", "2026", "TBA"));
+        films.add(new DataMarvelDC("Marvel's Nova", "Action", "140", "2025", "TBA"));
+        films.add(new DataMarvelDC("The Death of Superman", "Animation", "81", "2018", "7.3"));
+        films.add(new DataMarvelDC("Batman: Hush", "Animation", "82", "2019", "7.3"));
+        films.add(new DataMarvelDC("Justice League: Throne of Atlantis", "Animation", "72", "2015", "7.0"));
+        films.add(new DataMarvelDC("Marvel's Fantastic Four: Reborn", "Action", "140", "2026", "TBA"));
+        films.add(new DataMarvelDC("Batman: White Knight", "Animation", "80", "2025", "TBA"));
+        films.add(new DataMarvelDC("Red Hood and the Outlaws", "Action", "140", "2026", "TBA"));
+        films.add(new DataMarvelDC("Wonder Twins", "Action", "130", "2024", "TBA"));
+        films.add(new DataMarvelDC("Batman vs. Dracula", "Animation", "83", "2005", "6.6"));
+        films.add(new DataMarvelDC("The Justice Guild", "Animation", "24", "2025", "TBA"));
+        films.add(new DataMarvelDC("Spider-Man 2099", "Animation", "30", "2025", "TBA"));
+        films.add(new DataMarvelDC("Justice League: Forever Evil", "Animation", "90", "2026", "TBA"));
+        films.add(new DataMarvelDC("Doctor Doom", "Action", "140", "2026", "TBA"));
+        films.add(new DataMarvelDC("The Scarlet Witch", "Action", "120", "2026", "TBA"));
+        films.add(new DataMarvelDC("Harley Quinn: The Animated Series", "Animation", "22", "2019", "8.5"));
+        films.add(new DataMarvelDC("Martian Manhunter", "Action", "140", "2026", "TBA"));
+        films.add(new DataMarvelDC("Justice League: Darkseid War", "Animation", "120", "2027", "TBA"));
+        films.add(new DataMarvelDC("Hawkeye and Black Widow", "Action", "140", "2025", "TBA"));
+        films.add(new DataMarvelDC("Green Lantern: Lost Sector", "Animation", "85", "2026", "TBA"));
+        films.add(new DataMarvelDC("Zatanna", "Action", "130", "2026", "TBA"));
+        films.add(new DataMarvelDC("The Atom: Shrinking Universe", "Action", "120", "2025", "TBA"));
+        films.add(new DataMarvelDC("Justice League International", "Animation", "75", "2025", "TBA"));
+        films.add(new DataMarvelDC("Marvel's Runaways: The Next Generation", "TV Series", "50", "2026", "TBA"));
+        films.add(new DataMarvelDC("Spider-Woman: Origins", "Action", "120", "2025", "TBA"));
+        films.add(new DataMarvelDC("Thor: The Last Thunder", "Action", "140", "2026", "TBA"));
+        films.add(new DataMarvelDC("Shazam! Fury of the Gods", "Action", "130", "2023", "6.4"));
+        films.add(new DataMarvelDC("Batman: Year Two", "Animation", "85", "2025", "TBA"));
+        films.add(new DataMarvelDC("Superman vs. Lobo", "Animation", "85", "2026", "TBA"));
+        films.add(new DataMarvelDC("Iron Man: Extremis", "Animation", "120", "2024", "TBA"));
+        films.add(new DataMarvelDC("Eternals: The End of Time", "Action", "150", "2027", "TBA"));
+        films.add(new DataMarvelDC("The League of Shadows", "Animation", "80", "2025", "TBA"));
+        films.add(new DataMarvelDC("Black Canary", "Action", "130", "2025", "TBA"));
+        films.add(new DataMarvelDC("Justice League: Injustice Saga", "Animation", "90", "2026", "TBA"));
+        films.add(new DataMarvelDC("Marvel's Blade Chronicles", "Action", "140", "2026", "TBA"));
+        films.add(new DataMarvelDC("The Flash: Legacy", "Action", "130", "2025", "TBA"));
         return films;
     }
 }

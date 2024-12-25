@@ -18,15 +18,18 @@ public class SearchMarvelDC {
 
     // Metode pencarian rekursif
     public static ArrayList<DataMarvelDC> searchByGenreRecursive(ArrayList<DataMarvelDC> films, String genre, int index, ArrayList<DataMarvelDC> result) {
-        
-        if (index < 0) { // Kondisi dasar: mencapai awal list
-            return result;
-        } else {
+        if (index == 0) { // Basis rekursi: elemen pertama array
             DataMarvelDC film = films.get(index);
-            if (film.getGenre().equals(genre)) { 
+            if (film.getGenre().equals(genre)) {
                 result.add(film);
             }
-            return searchByGenreRecursive(films, genre, index - 1, result); // Rekursi untuk elemen sebelumnya
+            return result;
+        } else { // Rekursi ke elemen sebelumnya
+            DataMarvelDC film = films.get(index);
+            if (film.getGenre().equals(genre)) {
+                result.add(film);
+            }
+            return searchByGenreRecursive(films, genre, index - 1, result);
         }
     }
 }
