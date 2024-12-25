@@ -25,7 +25,7 @@ public class MarvelDCTest {
         if ("Iteratif".equals(selectedMethod)) {
             result = SearchMarvelDC.searchByGenreIterative(films, genre);
         } else {
-            result = SearchMarvelDC.searchByGenreRecursive(films, genre, 0, new ArrayList<>());
+            result = SearchMarvelDC.searchByGenreRecursive(films, genre, films.size() - 1, new ArrayList<>());
         }
 
         // Akhiri pengukuran waktu

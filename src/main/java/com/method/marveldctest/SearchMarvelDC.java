@@ -3,12 +3,13 @@ package com.method.marveldctest;
 import java.util.ArrayList;
 
 public class SearchMarvelDC {
+
     // Metode pencarian iteratif
     public static ArrayList<DataMarvelDC> searchByGenreIterative(ArrayList<DataMarvelDC> films, String genre) {
         ArrayList<DataMarvelDC> result = new ArrayList<>();
         for (int i = 0; i < films.size(); i++) {
             DataMarvelDC film = films.get(i);
-            if (film.getGenre().toLowerCase().equals(genre)) {
+            if (film.getGenre().equals(genre)) { // Tanpa toLowerCase
                 result.add(film);
             }
         }
@@ -17,21 +18,15 @@ public class SearchMarvelDC {
 
     // Metode pencarian rekursif
     public static ArrayList<DataMarvelDC> searchByGenreRecursive(ArrayList<DataMarvelDC> films, String genre, int index, ArrayList<DataMarvelDC> result) {
-        // Kondisi dasar: jika sudah mencapai akhir list, mengembalikan hasil
-        if (index >= films.size()) {
+        
+        if (index < 0) { // Kondisi dasar: mencapai awal list
             return result;
+        } else {
+            DataMarvelDC film = films.get(index);
+            if (film.getGenre().equals(genre)) { 
+                result.add(film);
+            }
+            return searchByGenreRecursive(films, genre, index - 1, result); // Rekursi untuk elemen sebelumnya
         }
-
-        // Mendapatkan film pada indeks saat ini
-        DataMarvelDC film = films.get(index);
-
-        // Meriksa apakah genre cocok (case-insensitive)
-        if (film.getGenre().toLowerCase().contains(genre)) {
-            result.add(film);
-        }
-        // Memanggil rekursif untuk elemen berikutnya
-        return searchByGenreRecursive(films, genre, index + 1, result);
     }
 }
-
-

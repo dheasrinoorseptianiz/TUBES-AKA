@@ -34,12 +34,12 @@ public class UIMarvelDC extends JFrame {
 
         // Tombol Iteratif
         JButton btnIterative = new JButton("Iteratif");
-        panelInput.add(new JLabel());  // Placeholder
+        panelInput.add(new JLabel()); // Placeholder
         panelInput.add(btnIterative);
 
         // Tombol Rekursif
         JButton btnRecursive = new JButton("Rekursif");
-        panelInput.add(new JLabel());  // Placeholder
+        panelInput.add(new JLabel()); // Placeholder
         panelInput.add(btnRecursive);
 
         add(panelInput, BorderLayout.NORTH);
@@ -63,13 +63,19 @@ public class UIMarvelDC extends JFrame {
         add(lblExecutionTime, BorderLayout.SOUTH);
 
         // Listener tombol iteratif
-        btnIterative.addActionListener(e -> {
-            performSearch("Iteratif");
+        btnIterative.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent event) {
+                performSearch("Iteratif");
+            }
         });
 
         // Listener tombol rekursif
-        btnRecursive.addActionListener(e -> {
-            performSearch("Rekursif");
+        btnRecursive.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent event) {
+                performSearch("Rekursif");
+            }
         });
 
         // Tampilkan semua data saat aplikasi pertama kali dijalankan
@@ -87,7 +93,7 @@ public class UIMarvelDC extends JFrame {
     }
 
     private void performSearch(String method) {
-        String genre = txtGenre.getText().trim().toLowerCase();
+        String genre = txtGenre.getText().trim();
 
         // Validasi input
         if (genre.isEmpty()) {
