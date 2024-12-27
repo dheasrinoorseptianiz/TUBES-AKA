@@ -28,16 +28,16 @@ public class MarvelDCTest {
             result = SearchMarvelDC.searchByGenreRecursive(films, genre, films.size() - 1, new ArrayList<>());
         }
 
-        // Akhiri pengukuran waktu
+        // Mengakhiri pengukuran waktu
         long endTime = System.nanoTime();
         double duration = (endTime - startTime) / 1_000_000.0; // Konversi ke milidetik
 
-        // Tampilkan hasil di tabel
-        tableModel.setRowCount(0); // Hapus data lama
+        // Menampilkan hasil di tabel
+        tableModel.setRowCount(0); // Menghapus data lama
         for (DataMarvelDC film : result) {
             tableModel.addRow(film.toObjectArray());
         }
-        // Tampilkan waktu eksekusi
+        // Menampilkan waktu eksekusi
         lblExecutionTime.setText(String.format("Waktu Eksekusi (%s): %.3f ms", selectedMethod, duration));
 
         // Jika tidak ada hasil

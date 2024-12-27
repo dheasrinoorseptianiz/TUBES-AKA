@@ -48,7 +48,7 @@ public class UIMarvelDC extends JFrame {
         tableModel = new DefaultTableModel();
         tableModel.addColumn("Judul");
         tableModel.addColumn("Genre");
-        tableModel.addColumn("Durasi");
+        tableModel.addColumn("Durasi (menit)");
         tableModel.addColumn("Tahun Rilis");
         tableModel.addColumn("Rating");
 
@@ -78,7 +78,7 @@ public class UIMarvelDC extends JFrame {
             }
         });
 
-        // Tampilkan semua data saat aplikasi pertama kali dijalankan
+        // Menampilkan semua data saat aplikasi pertama kali dijalankan
         displayAllData();
     }
 
@@ -101,7 +101,7 @@ public class UIMarvelDC extends JFrame {
             return;
         }
 
-        // Panggil metode pencarian
+        // Memanggil metode pencarian
         MarvelDCTest.searchFilm(genre, method, tableModel, lblExecutionTime);
     }
 }
